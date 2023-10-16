@@ -1,0 +1,21 @@
+# Dependency directories
+node_modules/
+.parcel-cache/
+
+# Compiled output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
