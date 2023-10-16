@@ -2,7 +2,7 @@
 
 CashSync is an expense tracker website that allows you to manage your expenses, add new expenses, delete them, and filter your expenses by text and date. Stay in control of your finances and track your spending with ease.
 
-![CashSync Demo](https://cash-sync.netlify.app/)
+Visit live link here [https://cash-sync.netlify.app/](https://cash-sync.netlify.app/)
 
 ## Features
 
