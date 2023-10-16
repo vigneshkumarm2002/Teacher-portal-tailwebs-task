@@ -191,7 +191,7 @@ const Form=({
 
               <button
                 type="submit"
-                className="w-full h-[45px] text-white mt-2 py-2 px-4 rounded bg-[#1b8381] sm:hover:bg-[#125957] "
+                className="w-full h-[45px] font-medium sm:font-semibold  text-white mt-2 py-2 px-4 rounded bg-[#1b8381] sm:hover:bg-[#125957] "
               >
                 {isEdit ? "Save Changes" : "Add Expense"}
               </button>

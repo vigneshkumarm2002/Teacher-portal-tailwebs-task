@@ -35,8 +35,8 @@ const SearchBar = ({ onSearch, onFilterDate }) => {
         <input
           type="search"
           name="search"
-          placeholder="Search"
-          className="bg-[#EEFFFD] w-full h-[46px]  px-5 pr-10  rounded-full text-md font-medium border-2 border-[#1b8381] placeholder-[#1b8381] outline-none flex items-center justify-center shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
+          placeholder="Filter by text"
+          className="bg-[#EEFFFD] w-full h-[46px]  px-5 pr-10  rounded-full text-md font-medium border-2 border-[#1b8381] text-[14px] xs:text-[16px] placeholder-[#1b8381] outline-none flex items-center justify-center shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
           autoComplete="off"
           value={searchText}
           onChange={handleInputChange}
@@ -62,9 +62,9 @@ const SearchBar = ({ onSearch, onFilterDate }) => {
         <DatePicker
           selected={selectedDate}
           onChange={handleDateChange}
-          placeholderText="Select Date"
+          placeholderText="Filter by Date"
           dateFormat="dd-MM-yyyy"
-          className="bg-[#EEFFFD] w-[150px] h-[46px] px-5 font-medium rounded-full border-2 border-[#1b8381] placeholder-[#1b8381] text-center text-md outline-none shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] cursor-pointer"
+          className="bg-[#EEFFFD] w-[150px] h-[40px] xs:h-[46px] px-3 font-medium rounded-full border-2 border-[#1b8381] placeholder-[#1b8381] text-[14px] xs:text-[16px] text-center text-md outline-none shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] cursor-pointer"
         />
         {selectedDate && (
           <button

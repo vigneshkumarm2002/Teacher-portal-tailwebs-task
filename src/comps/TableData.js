@@ -78,7 +78,7 @@ const TableData = ({
 
   return (
     <>
-      <table className="w-full mt-10 ">
+      <table className="w-full mt-8 xs:mt-10 ">
         <TableHeader/>
         <tbody>
           {renderData.length > 0 ? (
@@ -130,7 +130,7 @@ const TableData = ({
             })
           ) : (
             <tr className="text-center border border-[#1b8381]">
-              <td className="py-6 px-1 border-2 border-[#1b8381]" colSpan="8">
+              <td className="py-6 px-1 text-center  md:border-2 border-[#1b8381]" colSpan="8">
                 No Data Found
               </td>
             </tr>

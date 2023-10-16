@@ -165,11 +165,11 @@ const Expenses = () => {
 
   return (
     <>
-      <Nav />
+      <Nav /> 
       <div className="flex flex-col-reverse sm:flex-row justify-between xs:items-center mt-20 gap-5 ">
         <SearchBar onSearch={handleSearchInput} onFilterDate={handleFilterDate}/>
         <button
-          className="bg-[#1b8381] text-white h-[46px] py-2 px-5 rounded sm:hover:bg-[#125957]"
+          className="bg-[#1b8381] text-white font-medium sm:font-semibold h-[46px] py-2 px-5 rounded sm:hover:bg-[#125957]"
           onClick={handleAddExpenseBtn}
         >
           Add new expense

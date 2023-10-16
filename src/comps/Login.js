@@ -64,7 +64,7 @@ const Login = () => {
           <button
             type="submit"
             onClick={handleLogin}
-            className="w-full bg-[#1b8381] text-white py-2 rounded hover:bg-[#125957]"
+            className="w-full bg-[#1b8381] font-medium sm:font-semibold text-white py-2 rounded hover:bg-[#125957]"
           >
             Log in
           </button>
