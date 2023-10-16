@@ -29,8 +29,8 @@ const Login = () => {
   return (
     <>
     {User? <ExpensesPage/>:
-    <div className="flex justify-center items-center h-screen">
-      <div className="bg-white p-5 sm:p-8 rounded-lg shadow-md w-[85%] sm:w-[400px]">
+    <div className="flex flex-col justify-center items-center h-screen gap-2">
+      <div className="bg-white p-5 sm:p-8 rounded-lg  w-[95%] sm:w-[400px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]" >
         <h1 className="text-xl sm:text-2xl font-bold mb-4 ">Login</h1>
         <form>
           <div className="mb-4">

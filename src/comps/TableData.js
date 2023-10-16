@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DeleteModal from "./DeleteModal";
+import TableHeader from "./TableHeader";
 
 const TableData = ({
   expensesData,
@@ -77,60 +78,39 @@ const TableData = ({
 
   return (
     <>
-      <table className="w-full mt-10 border border-[#1b8381]">
-        <thead className="w-full bg-[#1b8381] text-white rounded-full">
-          <tr>
-            <th className="py-4 px-1 border-2 border-black w-[50px]">S No</th>
-            <th className="py-4 px-1 border-2 border-black w-[200px]">Title</th>
-            <th className="py-4 px-1 border-2 border-black w-[150px]">
-              Category
-            </th>
-            <th className="py-4 px-1 border-2 border-black w-[300px]">
-              Description
-            </th>
-            <th className="py-4 px-1 border-2 border-black w-[150px]">Date</th>
-            <th className="py-4 px-1 border-2 border-black w-[100px]">
-              Amount
-            </th>
-            <th className="py-4 px-1 border-2 border-black w-[150px]">
-              Updated At
-            </th>
-            <th className="py-4 px-1 border-2 border-black w-[100px]">
-              Action
-            </th>
-          </tr>
-        </thead>
+      <table className="w-full mt-10 ">
+        <TableHeader/>
         <tbody>
           {renderData.length > 0 ? (
             renderData.slice(startIndex, endIndex).map((item, index) => {
               return (
-                <tr
-                  className="text-center border border-[#1b8381]"
+                <tr 
+                  className="text-center border-2 md:border border-[#1b8381] "
                   key={item.id}
                 >
-                  <td className="py-3 px-1 border-2 border-[#1b8381] w-[50px]">
+                  <td data-label="S No" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[50px]">
                     {startIndex + index + 1}
                   </td>
-                  <td className="py-3 px-1 border-2 border-[#1b8381] w-[200px]">
+                  <td data-label="Title" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[200px]">
                     {item.title}
                   </td>
-                  <td className="py-3 px-1 border-2 border-[#1b8381] w-[150px]">
+                  <td data-label="Category" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[150px]">
                     {item.selectedCategory}
                   </td>
-                  <td className="py-3 px-1 border-2 border-[#1b8381] w-[300px]">
+                  <td data-label="Description" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[300px]">
                     {item.description}
                   </td>
-                  <td className="py-3 px-1 border-2 border-[#1b8381] w-[150px] ">
+                  <td data-label="Expense Date" className="py-3 px-1 md:border-2 border-[#1b8381]  md:w-[150px] ">
                     {formatDate(item.date)}
                   </td>
-                  <td className="py-3 px-1 border-2 border-[#1b8381] w-[100px]">
+                  <td data-label="Amount" className="py-3 px-1 md:border-2 border-[#1b8381]  md:w-[100px]">
                     {item.expenseAmount}
                   </td>
-                  <td className="py-3 px-1 border-2 border-[#1b8381] w-[150px]">
+                  <td data-label="Updated At" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[150px]">
                     {formatDate(item.updatedAt)}
                   </td>
-                  <td className="py-3 px-1 border-2 border-[#1b8381] w-[100px] ">
-                    <div className="w-full flex gap-2 items-center justify-center">
+                  <td data-label="Action" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[100px] ">
+                    <div className="w-full flex gap-2 items-center justify-end md:justify-center">
                       <span
                         className="material-symbols-rounded cursor-pointer text-[#1b8381]"
                         onClick={() => handleEditData(item.id)}
@@ -161,8 +141,8 @@ const TableData = ({
       {/* Pagination Code */}
       <div className="mt-8 flex justify-center gap-2 pb-[40px]">
         {Array.from({ length: totalPages }, (_, i) => (
-          <button
-            className={`w-[35px] h-[35px] rounded-[50px] border-2 border-[#1b8381] text-[#1b8381] ${
+          <button key={i}
+             className={`w-[35px] h-[35px] rounded-[50px] border-2 border-[#1b8381] text-[#1b8381] ${
               currentPage === i + 1 ? "bg-[#1b8381] text-white" : ""
             }  `}
             onClick={() => handlePageChange(i + 1)}

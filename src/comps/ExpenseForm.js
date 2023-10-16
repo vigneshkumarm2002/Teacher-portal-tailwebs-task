@@ -80,7 +80,7 @@ const Form=({
     <>
       {showForm && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] bg-white p-5 rounded shadow-[0_8px_30px_rgb(0,0,0,0.12)] ">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[500px] bg-white p-5 rounded shadow-[0_8px_30px_rgb(0,0,0,0.12)] " style={{ maxHeight: '85vh', overflowY: 'auto' }}>
             <button
               className="absolute top-2 right-2 p-2"
               onClick={handleFormClose}
@@ -106,7 +106,7 @@ const Form=({
               {isEdit ? "Edit Expense" : "Add Expense"}
             </h2>
             <form onSubmit={handleSubmit}>
-              <div className="mb-4 grid grid-cols-2 gap-4">
+              <div className="mb-4 sm:grid grid-cols-2 gap-4 ">
                 <div className="mb-4">
                   <label htmlFor="title" className="block text-gray-600">
                     Title
@@ -149,12 +149,13 @@ const Form=({
                   name="description"
                   value={formValues.description}
                   onChange={handleInputChange}
-                  className="w-full border rounded p-2 h-16 overflow-y-auto resize-none"
+                  maxlength="60"
+                  className="w-full border rounded p-2 h-17 sm:h-16 overflow-y-auto resize-none"
                   rows="3"
                 />
               </div>
 
-              <div className="mb-4 grid grid-cols-2 gap-4">
+              <div className="mb-4 sm:grid grid-cols-2 gap-4">
                 <div>
                   <label
                     htmlFor="expenseAmount"
@@ -190,7 +191,7 @@ const Form=({
 
               <button
                 type="submit"
-                className="w-full h-[45px] text-white mt-2 py-2 px-4 rounded bg-[#1b8381] hover:bg-[#125957] "
+                className="w-full h-[45px] text-white mt-2 py-2 px-4 rounded bg-[#1b8381] sm:hover:bg-[#125957] "
               >
                 {isEdit ? "Save Changes" : "Add Expense"}
               </button>

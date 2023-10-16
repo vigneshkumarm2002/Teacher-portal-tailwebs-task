@@ -30,13 +30,13 @@ const SearchBar = ({ onSearch, onFilterDate }) => {
   };
 
   return (
-    <div className="flex gap-4">
-      <div className="relative text-gray-600">
+    <div className="flex gap-4 flex-col md:flex-row items-center">
+      <div className="relative w-full  sm:w-[200px] md:w-[280px] text-gray-600">
         <input
           type="search"
           name="search"
           placeholder="Search"
-          className="bg-[#EEFFFD] w-[280px] h-[46px] px-5 pr-10  rounded-full text-md font-medium border-2 border-[#1b8381] placeholder-[#1b8381] outline-none flex items-center justify-center shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
+          className="bg-[#EEFFFD] w-full h-[46px]  px-5 pr-10  rounded-full text-md font-medium border-2 border-[#1b8381] placeholder-[#1b8381] outline-none flex items-center justify-center shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
           autoComplete="off"
           value={searchText}
           onChange={handleInputChange}

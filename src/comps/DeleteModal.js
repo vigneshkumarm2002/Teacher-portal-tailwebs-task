@@ -12,7 +12,7 @@ const DeleteModal = ({setShowDeleteModal,deleteId,onDeleteItem}) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40">
-    <div className=" w-[300px] bg-white px-4 rounded py-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)] ">
+    <div className="w-[90%] sm:w-[300px] bg-white px-4 rounded py-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)] ">
       <p className="font-medium">
         Are you sure you want delete this Expense?
       </p>

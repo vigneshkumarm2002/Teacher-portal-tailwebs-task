@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         montserrat: ['Montserrat', 'sans'],
       },
+      screens: {
+        'xs': '500px',  // Added custom screen size 'xs' for 500px
+      },
     },
   },
   plugins: [],
