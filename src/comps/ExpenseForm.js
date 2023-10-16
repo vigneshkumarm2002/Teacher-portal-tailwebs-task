@@ -11,7 +11,7 @@ const categories = [
   "Other",
 ];
 
-function Form({
+const Form=({
   showForm,
   setshowForm,
   setExpensesData,
@@ -19,7 +19,7 @@ function Form({
   setIsEdit,
   editData,
   editedData,
-}) {
+}) =>{
   const initialFormValues = {
     title: "",
     description: "",

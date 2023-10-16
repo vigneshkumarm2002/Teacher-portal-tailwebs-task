@@ -1,8 +1,7 @@
 import React from 'react';
 import Login from './Login';
 
-
-function App() {
+const App=()=> {
   return (
  <Login/>
   );
