@@ -1,15 +1,8 @@
-# CashSync - Expense Tracker Website
+# Teacher Portal - Academic Management System
 
-CashSync is an expense tracker website that allows you to manage your expenses, add new expenses, delete them, and filter your expenses by text and date. Stay in control of your finances and track your spending with ease.
+Teacher Portal is an academic management system website that allows you to manage student records, add new students, delete them, and filter the record by name and date.
 
 Visit live link here [https://cash-sync.netlify.app/](https://cash-sync.netlify.app/)
-
-## Features
-
-- **Add Expenses:** Easily add new expenses with descriptions, amounts, and dates.
-- **Delete Expenses:** Remove unwanted expenses to keep your records clean.
-- **Filter Expenses:** Search for expenses using text and date filters.
-- **Responsive Design:** Access CashSync on various devices - desktop, tablet, or mobile.
 
 ## Getting Started
 
