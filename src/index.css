@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 body {
-  background-color: #EEFFFD;
-    font-family: 'Montserrat', sans-serif;
-    padding:0px 40px;
+  background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -13,34 +12,46 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .material-symbols-rounded {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 300,
-  'GRAD' 0,
-  'opsz' 24
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
 }
 
+.customScroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.customScroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.customScroll::-webkit-scrollbar-thumb {
+  background: #a3cef1;
+  border-radius: 6px;
+}
+
+.customScroll::-webkit-scrollbar-thumb:hover {
+  background: #a3cef1;
+}
+th {
+  font-weight: 600;
+}
 
 @media only screen and (max-width: 767px) {
-  body{
-    padding: 0 30px;
-  }
-  table{
+  table {
     width: 100%;
   }
-  thead{
+  thead {
     display: none;
   }
- tbody{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
- }
+  tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
   table tbody tr td::before {
     content: attr(data-label);
     font-size: 10px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: medium;
   }
 
   table tbody tr td {
@@ -51,17 +62,10 @@ input[type="number"]::-webkit-outer-spin-button {
     text-align: end;
     align-items: center;
     font-size: 14px;
-    padding: 10px 10px !important;
-    border-bottom: 2px solid #1b8381;
+    padding: 10px 20px !important;
+    border-bottom: 2px solid #00a6fb;
   }
-  table tbody tr td:last-child{
-    border-bottom: 0px 
-  }
-}
-
-@media only screen and (max-width: 520px) {
-
-  body{
-    padding: 0 20px;
+  table tbody tr td:last-child {
+    border-bottom: 0px;
   }
 }

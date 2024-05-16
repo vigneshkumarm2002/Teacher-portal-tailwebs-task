@@ -1,30 +1,18 @@
-import React from 'react'
+import React from "react";
 
 const TableHeader = () => {
   return (
-    <thead className="w-full bg-[#1b8381] text-white rounded-full">
-          <tr>
-            <th className="py-4 px-1 border-2 border-black w-[50px]">S No</th>
-            <th className="py-4 px-1 border-2 border-black w-[200px]">Title</th>
-            <th className="py-4 px-1 border-2 border-black w-[150px]">
-              Category
-            </th>
-            <th className="py-4 px-1 border-2 border-black w-[300px]">
-              Description
-            </th>
-            <th className="py-4 px-1 border-2 border-black w-[150px]">Expense Date</th>
-            <th className="py-4 px-1 border-2 border-black w-[100px]">
-              Amount
-            </th>
-            <th className="py-4 px-1 border-2 border-black w-[150px]">
-              Updated At
-            </th>
-            <th className="py-4 px-1 border-2 border-black w-[100px]">
-              Action
-            </th>
-          </tr>
-        </thead>
-  )
-}
+    <thead className="w-full bg-[#00a6fb]  sticky h-[50px]  top-0 z-1 text-left font-medium text-white ">
+      <tr>
+        <th className="py-2 pl-4 pr-2  w-[6%]">S No</th>
+        <th className="py-2 px-2  w-auto">Name</th>
+        <th className="py-2 px-2  w-[20%]">Subject</th>
+        <th className="py-2 px-2  w-[15%]">Marks</th>
+        <th className="py-2 px-2  w-[15%]">Updated At</th>
+        <th className="py-2 px-2  w-[10%]">Action</th>
+      </tr>
+    </thead>
+  );
+};
 
-export default TableHeader
+export default TableHeader;

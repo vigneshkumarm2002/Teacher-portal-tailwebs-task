@@ -3,58 +3,46 @@ import DeleteModal from "./DeleteModal";
 import TableHeader from "./TableHeader";
 
 const TableData = ({
-  expensesData,
+  studentData,
   onEditItem,
   onDeleteItem,
-  filterDate,filterText
+  filterDate,
+  filterText,
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
 
-  const renderData = filteredData ? filteredData : expensesData;
+  const renderData = filteredData ? filteredData : studentData;
 
   useEffect(() => {
     if (filterDate && filterText) {
       // Filter data by both date and text
       const filterByText = renderData.filter((item) => {
-        return item.title.toLowerCase().includes(filterText.toLowerCase());
+        return item?.name?.toLowerCase().includes(filterText?.toLowerCase());
       });
-      const filterByDate = filterByText.filter(item => item.date === filterDate);
-     
+      const filterByDate = filterByText.filter(
+        (item) => item?.updatedAt === filterDate
+      );
+
       setFilteredData(filterByDate);
-    } else if (filterDate && (!filterText)) {
+    } else if (filterDate && !filterText) {
       // Only filter by date
-      const filterByDate = expensesData.filter(item => item.date === filterDate);
+      const filterByDate = studentData.filter(
+        (item) => item?.updatedAt === filterDate
+      );
       setFilteredData(filterByDate);
-    } else if (filterText && (!filterDate)) {
+    } else if (filterText && !filterDate) {
       // Only filter by text
-      const filterByText = expensesData.filter((item) => {
-        return item.title.toLowerCase().includes(filterText.toLowerCase());
+      const filterByText = studentData.filter((item) => {
+        return item?.name?.toLowerCase().includes(filterText.toLowerCase());
       });
       setFilteredData(filterByText);
     } else {
       // No filters, display full data
       setFilteredData(null);
     }
-  }, [filterDate, expensesData, filterText]);
-  
-
-  const entriesPerPage = 6;
-
- 
-
-  const totalEntries = filteredData ? filteredData.length : expensesData.length;
-
-  const totalPages = Math.ceil(totalEntries / entriesPerPage);
-
-  const startIndex = (currentPage - 1) * entriesPerPage;
-  const endIndex = Math.min(startIndex + entriesPerPage, totalEntries);
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
+  }, [filterDate, studentData, filterText]);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -76,43 +64,77 @@ const TableData = ({
     onEditItem(id);
   };
 
+  const avatar = (name, color) => {
+    console.log("col", color);
+    return (
+      <div
+        className={`inline-flex items-center justify-center w-8 h-8 overflow-hidden ${
+          color ? color?.bgColor : "bg-red-500/10"
+        } rounded-full mr-2`}
+      >
+        <span
+          className={`font-medium text-sm uppercase ${
+            color ? color?.textColor : "text-red-500"
+          } `}
+        >
+          {name.charAt(0)}
+        </span>
+      </div>
+    );
+  };
+
   return (
-    <>
-      <table className="w-full mt-8 xs:mt-10 ">
-        <TableHeader/>
+    <div className="w-full md:max-h-[calc(100vh-190px)] md:overflow-y-auto customScroll pb-4">
+      <table className="w-full h-full  ">
+        <TableHeader />
         <tbody>
           {renderData.length > 0 ? (
-            renderData.slice(startIndex, endIndex).map((item, index) => {
+            renderData.map((item, index) => {
               return (
-                <tr 
-                  className="text-center border-2 md:border border-[#1b8381] "
+                <tr
+                  className=" border-2 md:border-0 border-[#00a6fb] "
                   key={item.id}
                 >
-                  <td data-label="S No" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[50px]">
-                    {startIndex + index + 1}
+                  <td
+                    data-label="S No"
+                    className="py-[10px] pl-4 pr-2  md:border-b border-[#00a6fb]  "
+                  >
+                    {index + 1}
                   </td>
-                  <td data-label="Title" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[200px]">
-                    {item.title}
+                  <td
+                    data-label="Name"
+                    className="py-[10px] px-2  md:border-b border-[#00a6fb]   text-left"
+                  >
+                    <div className="flex  items-center">
+                      {avatar(item?.name, item?.avatarColor)}
+                      <div> {item?.name}</div>
+                    </div>
                   </td>
-                  <td data-label="Category" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[150px]">
-                    {item.selectedCategory}
+                  <td
+                    data-label="Subject"
+                    className="py-[10px] px-2  md:border-b border-[#00a6fb]  "
+                  >
+                    {item?.subject}
                   </td>
-                  <td data-label="Description" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[300px]">
-                    {item.description}
+                  <td
+                    data-label="Marks"
+                    className="py-[10px] px-2  md:border-b border-[#00a6fb]  "
+                  >
+                    {item?.marks}
                   </td>
-                  <td data-label="Expense Date" className="py-3 px-1 md:border-2 border-[#1b8381]  md:w-[150px] ">
-                    {formatDate(item.date)}
+                  <td
+                    data-label="Updated At"
+                    className="py-[10px] px-2 md:border-b border-[#00a6fb]   "
+                  >
+                    {formatDate(item?.updatedAt)}
                   </td>
-                  <td data-label="Amount" className="py-3 px-1 md:border-2 border-[#1b8381]  md:w-[100px]">
-                    {item.expenseAmount}
-                  </td>
-                  <td data-label="Updated At" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[150px]">
-                    {formatDate(item.updatedAt)}
-                  </td>
-                  <td data-label="Action" className="py-3 px-1  md:border-2 border-[#1b8381]  md:w-[100px] ">
-                    <div className="w-full flex gap-2 items-center justify-end md:justify-center">
+                  <td
+                    data-label="Action"
+                    className="py-[10px] px-2  md:border-b border-[#00a6fb]  "
+                  >
+                    <div className="w-full flex gap-2 items-center md:justify-start justify-end">
                       <span
-                        className="material-symbols-rounded cursor-pointer text-[#1b8381]"
+                        className="material-symbols-rounded cursor-pointer text-[#00a6fb]"
                         onClick={() => handleEditData(item.id)}
                       >
                         edit_square
@@ -129,28 +151,17 @@ const TableData = ({
               );
             })
           ) : (
-            <tr className="text-center border border-[#1b8381]">
-              <td className="py-6 px-1 text-center  md:border-2 border-[#1b8381]" colSpan="8">
+            <tr className="text-center border-b border-[#00a6fb]">
+              <td
+                className="py-6 px-1 text-center  md:border-b-2 border-[#00a6fb]"
+                colSpan="8"
+              >
                 No Data Found
               </td>
             </tr>
           )}
         </tbody>
       </table>
-
-      {/* Pagination Code */}
-      <div className="mt-8 flex justify-center gap-2 pb-[40px]">
-        {Array.from({ length: totalPages }, (_, i) => (
-          <button key={i}
-             className={`w-[35px] h-[35px] rounded-[50px] border-2 border-[#1b8381] text-[#1b8381] ${
-              currentPage === i + 1 ? "bg-[#1b8381] text-white" : ""
-            }  `}
-            onClick={() => handlePageChange(i + 1)}
-          >
-            {i + 1}
-          </button>
-        ))}
-      </div>
 
       {showDeleteModal && (
         <DeleteModal
@@ -159,7 +170,7 @@ const TableData = ({
           onDeleteItem={onDeleteItem}
         />
       )}
-    </>
+    </div>
   );
 };
 

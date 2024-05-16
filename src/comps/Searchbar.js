@@ -19,24 +19,24 @@ const SearchBar = ({ onSearch, onFilterDate }) => {
   const handleDateChange = (date) => {
     if (date) {
       setSelectedDate(date);
-      onFilterDate(formatDateToYYYYMMDD(date) );
+      onFilterDate(formatDateToYYYYMMDD(date));
     }
     // Send an empty string when the date is cleared
   };
 
   const clearDate = () => {
     setSelectedDate(""); // Send an empty string when the date is cleared
-    onFilterDate("")
+    onFilterDate("");
   };
 
   return (
-    <div className="flex gap-4 flex-col md:flex-row items-center">
+    <div className="flex gap-4 flex-col md:flex-row md:items-center">
       <div className="relative w-full  sm:w-[200px] md:w-[280px] text-gray-600">
         <input
           type="search"
           name="search"
-          placeholder="Filter by text"
-          className="bg-[#EEFFFD] w-full h-[46px]  px-5 pr-10  rounded-full text-md font-medium border-2 border-[#1b8381] text-[14px] xs:text-[16px] placeholder-[#1b8381] outline-none flex items-center justify-center shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
+          placeholder="Filter by name"
+          className=" w-full h-[40px]  px-5 pr-10  rounded-md text-md font-medium border-2 border-[#00a6fb] text-[14px] xs:text-[16px] placeholder-[#00a6fb] outline-none flex items-center justify-center shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
           autoComplete="off"
           value={searchText}
           onChange={handleInputChange}
@@ -48,7 +48,7 @@ const SearchBar = ({ onSearch, onFilterDate }) => {
             viewBox="0 0 24 24"
           >
             <path
-              stroke="#1b8381"
+              stroke="#00a6fb"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
@@ -64,16 +64,16 @@ const SearchBar = ({ onSearch, onFilterDate }) => {
           onChange={handleDateChange}
           placeholderText="Filter by Date"
           dateFormat="dd-MM-yyyy"
-          className="bg-[#EEFFFD] w-[150px] h-[40px] xs:h-[46px] px-3 font-medium rounded-full border-2 border-[#1b8381] placeholder-[#1b8381] text-[14px] xs:text-[16px] text-center text-md outline-none shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] cursor-pointer"
+          className=" w-[150px] h-[40px]  px-3 font-medium rounded-md border-2 border-[#00a6fb] placeholder-[#00a6fb] text-[14px] xs:text-[16px] text-center text-md outline-none shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] cursor-pointer"
         />
         {selectedDate && (
           <button
             className="absolute right-[12px] top-[12px] text-gray-800"
             onClick={clearDate}
           >
-            <svg className="w-4 h-4 mt-1" fill="none" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 " fill="none" viewBox="0 0 24 24">
               <path
-                stroke="#1b8381"
+                stroke="#00a6fb"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
