@@ -2,13 +2,13 @@
 
 Teacher Portal is an academic management system website that allows you to manage student records, add new students, delete them, and filter the record by name and date.
 
-Visit live link here [https://cash-sync.netlify.app/](https://cash-sync.netlify.app/)
+Visit the live link here [https://teacher-portal-tailwebs-task.vercel.app/](https://teacher-portal-tailwebs-task.vercel.app/)
 
 ## Getting Started
 
 ### Prerequisites
 
-Before running CashSync, you need to have the following installed:
+Before running Teacher-portal-tailwebs-task, you need to have the following installed:
 
 - Node.js
 - npm (Node Package Manager)
@@ -18,12 +18,12 @@ Before running CashSync, you need to have the following installed:
 # Clone the repository:
 
    ```bash
-   git clone https://github.com/vigneshkumarm2002/CashSync.git
+   https://github.com/vigneshkumarm2002/Teacher-portal-tailwebs-task.git
    ```
 Install dependencies:
 
 ```bash
-cd CashSync
+cd Teacher-portal-tailwebs-task
 npm install
 ```
 
@@ -33,14 +33,7 @@ npm install
 npm start
 ```
 
-The website should now be running locally at http://localhost:3000.
+The website should now be running locally at http://localhost:1234.
 
-### Usage
-
-1. Open the CashSync website in your browser.
-2. Click the "Add Expense" button to enter a new expense with details.
-3. To delete an expense, click the "Delete" button next to the respective expense.
-4. Use the search bar and date picker to filter expenses based on text and date.
-
-Contact
+# Contact
 Have questions or suggestions? Feel free to [contact me](https://mvigneshkumar-portfolio.web.app/).
