@@ -3,6 +3,10 @@
 Teacher Portal is an academic management system website that allows you to manage student records, add new students, delete them, and filter the record by name and date.
 
 Visit the live link here [https://teacher-portal-tailwebs-task.vercel.app/](https://teacher-portal-tailwebs-task.vercel.app/)
+### Demo credentials
+Email - admin@gmail.com
+Password - 123456
+
 
 ## Getting Started
 
