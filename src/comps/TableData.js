@@ -97,13 +97,13 @@ const TableData = ({
                 >
                   <td
                     data-label="S No"
-                    className="py-[10px] pl-4 pr-2  md:border-b border-[#00a6fb]  "
+                    className="py-[10px] pl-4 pr-2  md:border-b border-[#00a6fb] md:w-[6%] "
                   >
                     {index + 1}
                   </td>
                   <td
                     data-label="Name"
-                    className="py-[10px] px-2  md:border-b border-[#00a6fb]   text-left"
+                    className="py-[10px] px-2  md:border-b border-[#00a6fb] md:w-auto   text-left"
                   >
                     <div className="flex  items-center">
                       {avatar(item?.name, item?.avatarColor)}
@@ -112,25 +112,25 @@ const TableData = ({
                   </td>
                   <td
                     data-label="Subject"
-                    className="py-[10px] px-2  md:border-b border-[#00a6fb]  "
+                    className="py-[10px] px-2  md:border-b border-[#00a6fb] md:w-[20%]  "
                   >
                     {item?.subject}
                   </td>
                   <td
                     data-label="Marks"
-                    className="py-[10px] px-2  md:border-b border-[#00a6fb]  "
+                    className="py-[10px] px-2  md:border-b border-[#00a6fb] md:w-[15%] "
                   >
                     {item?.marks}
                   </td>
                   <td
                     data-label="Updated At"
-                    className="py-[10px] px-2 md:border-b border-[#00a6fb]   "
+                    className="py-[10px] px-2 md:border-b border-[#00a6fb] md:w-[15%]  "
                   >
                     {formatDate(item?.updatedAt)}
                   </td>
                   <td
                     data-label="Action"
-                    className="py-[10px] px-2  md:border-b border-[#00a6fb]  "
+                    className="py-[10px] px-2  md:border-b border-[#00a6fb] md:w-[10%] "
                   >
                     <div className="w-full flex gap-2 items-center md:justify-start justify-end">
                       <span

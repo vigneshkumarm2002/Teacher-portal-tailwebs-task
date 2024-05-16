@@ -22,8 +22,9 @@ const Login = ({ setUser }) => {
     setError("");
   };
 
-  const handleLogin = (event) => {
-    event.preventDefault();
+  const handleLogin = (e) => {
+    console.log("vlii");
+    e.preventDefault();
     if (email === demoEmail && password === demoPassword) {
       setUser(email);
       localStorage.setItem("email", email);
@@ -41,7 +42,7 @@ const Login = ({ setUser }) => {
     <div className="flex flex-col justify-center items-center h-screen gap-2">
       <div className="bg-white p-5 sm:p-8 rounded-lg w-[95%] sm:w-[400px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
         <h1 className="text-xl sm:text-2xl font-bold mb-4">Login</h1>
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -78,8 +79,7 @@ const Login = ({ setUser }) => {
             <p className="text-red-500 text-xs pt-2">{error}</p>
           </div>
           <button
-            type="button"
-            onClick={handleLogin}
+            type="submit"
             className="w-full bg-[#00a6fb] font-medium sm:font-semibold text-white py-2 rounded"
           >
             Log in
