@@ -66,6 +66,7 @@ const Form = ({
         name: editData.name,
         subject: editData.subject,
         marks: editData.marks,
+        updatedAt: new Date().toISOString().slice(0, 10),
       });
     } else {
       setFormValues(initialFormValues);

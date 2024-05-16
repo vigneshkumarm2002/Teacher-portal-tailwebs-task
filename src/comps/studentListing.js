@@ -30,7 +30,7 @@ const StudentListing = () => {
   };
   // useEffect(() => {
   //   const filterByText = studentData.filter((item) => {
-  //     return item.title.toLowerCase().includes(filterText.toLowerCase());
+  //     return item.name.toLowerCase().includes(filterText.toLowerCase());
   //   });
   //   setFilteredData(filterByText);
   // }, [studentData, filterText]);
